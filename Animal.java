@@ -10,6 +10,7 @@ public abstract class Animal
         this.name = name;
     }
 
+    //Using 
     protected void startDescription()
     {
         String output = String.format("This method is not yet overidden.");
@@ -21,6 +22,7 @@ public abstract class Animal
 
     }
 
+    //Master method to output animal description
     protected void getDescription()
     {
         startDescription();
