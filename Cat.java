@@ -11,7 +11,14 @@ public class Cat extends Animal
     @Override
     protected void startDescription()
     {
-        String output = String.format("Am doggo!");
+        String output = String.format("Am catto!");
         System.out.println(output);
     }    
+
+    @Override
+    protected void endDescription()
+    {
+        String output = String.format("I'm a bit sassy\n");
+        System.out.println(output);
+    }
 }

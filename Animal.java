@@ -24,11 +24,10 @@ public abstract class Animal
     protected void getDescription()
     {
         startDescription();
-        String description = String.format("This animal gets around by: {0} /nAnimal sound: {1} /nIts gender is: {2} /nThe animal is: {3}", move, sound, gender, name);
+        String description = String.format("This animal gets around by: %s \nAnimal sound: %s \nIts gender is: %s \nThe animal is: %s", move, sound, gender, name);
         System.out.println(description);
         endDescription();
     }
-
 
 }
     

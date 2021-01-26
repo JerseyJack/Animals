@@ -15,4 +15,11 @@ public class Pig extends Animal
         String output = String.format("Am piggo!");
         System.out.println(output);
     }
+
+    @Override
+    protected void endDescription()
+    {
+        String output = String.format("I'm rather fat\n");
+        System.out.println(output);
+    }
 }
