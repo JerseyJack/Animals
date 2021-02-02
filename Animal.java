@@ -2,6 +2,7 @@ public abstract class Animal
 {
     protected String move, sound, gender, name;
 
+    //Constructor
     protected Animal(String move, String sound, String gender, String name)
     {
         this.move = move;
@@ -10,26 +11,48 @@ public abstract class Animal
         this.name = name;
     }
 
-    //Using 
-    protected void startDescription()
+    //Setting up methods to initialise as hooks for the derived classes to override
+    protected String startDescription()
     {
         String output = String.format("This method is not yet overidden.");
-        System.out.println(output);
+        return output;
     }
 
-    protected void endDescription()
+    protected String endDescription()
     {
-
+        String output = String.format("This method is not yet overidden.");
+        return output;
     }
 
     //Master method to output animal description
-    protected void getDescription()
+    protected String getDescription()
     {
-        startDescription();
-        String description = String.format("This animal gets around by: %s \nAnimal sound: %s \nIts gender is: %s \nThe animal is: %s", move, sound, gender, name);
-        System.out.println(description);
-        endDescription();
+        String description = String.format(startDescription() + "\nThis animal gets around by: %s \nAnimal sound: %s \nIts gender is: %s \nThe animal is: %s" + endDescription(), move, sound, gender, name);
+        return description;
     }
+
+    public String getMove()
+    {
+        return move;
+    }
+
+    public String getSound()
+    {
+        return sound;
+    }
+
+    public String getGender()
+    {
+        return gender;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    //Setting up the abstract class to force derived classes to use it
+    public abstract AnimalType getAnimalType();
 
 }
     

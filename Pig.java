@@ -1,25 +1,33 @@
 public class Pig extends Animal
 {
 
-    public AnimalType animalType = AnimalType.PIG;
+    //Get enumerated animal type
+    private AnimalType animalType = AnimalType.PIG;
 
+    //Constructor
     protected Pig(String move, String sound, String gender, String name) 
     {
         super(move, sound, gender, name);
     }
 
-    //@Override just specifies to the compiler 
+    //@Override the hook methods to update for this animal type
     @Override
-    protected void startDescription()
+    protected String startDescription()
     {
-        String output = String.format("Am piggo!");
-        System.out.println(output);
+        String output = String.format(String.valueOf("I am a " + getAnimalType()));
+        return output;
     }
 
     @Override
-    protected void endDescription()
+    protected String endDescription()
     {
         String output = String.format("I'm rather fat\n");
-        System.out.println(output);
+        return output;
+    }
+
+    //Getting the abstract method to get the animal type
+    public AnimalType getAnimalType()
+    {
+        return animalType;
     }
 }

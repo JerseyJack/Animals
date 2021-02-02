@@ -1,24 +1,33 @@
 public class Cat extends Animal
 { 
 
-    public AnimalType animalType = AnimalType.CAT;
+    //Get enumerated animal type
+    private AnimalType animalType = AnimalType.CAT;
 
+    //Constructor
     protected Cat(String move, String sound, String gender, String name) 
     {
         super(move, sound, gender, name);
     }
 
+    //@Override the hook methods to update for this animal type
     @Override
-    protected void startDescription()
+    protected String startDescription()
     {
-        String output = String.format("Am catto!");
-        System.out.println(output);
+        String output = String.format(String.valueOf("I am a " + getAnimalType()));
+        return output;
     }    
 
     @Override
-    protected void endDescription()
+    protected String endDescription()
     {
         String output = String.format("I'm a bit sassy\n");
-        System.out.println(output);
+        return output;
+    }
+
+    //Getting the abstract method to get the animal type
+    public AnimalType getAnimalType()
+    {
+        return animalType;
     }
 }
